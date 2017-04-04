@@ -29,6 +29,17 @@ body {
   position: relative;
   width: 250px;
 }
+.circle__wrapper {
+-webkit-transition: all 1s linear;
+  -moz-transition: all 1s linear;
+  -o-transition: all 1s linear;
+  transition: all 1s linear;
+}
+.circle__content {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
 .circle__inner {
   border-radius: 50%;
   cursor: pointer;
@@ -40,6 +51,7 @@ body {
   -ms-filter: blur(15px);
   filter: blur(15px);
 }
+.circle__wrapper:hover .circle__overlay-text,
 .circle__wrapper:hover .circle__overlay {
   display: block;
 }
@@ -55,6 +67,15 @@ body {
 .circle__inner--blue {
   background-color: #00a3e4;
 }
+.text--green {
+  color: #5ba446;
+}
+.text--orange {
+  color: #ef7b0a;
+}
+.text--blue {
+  color: #00a3e4;
+}
 .circle__overlay {
   border-radius: 50%;
   display: none;
@@ -66,11 +87,8 @@ body {
   z-index: 20;
 }
 .circle__text {
-  color: #fff;
+  color: #000;
   font-size: 18px;
-  left: 40%;
-  position: absolute;
-  top: 40%;
 }
 .text--headline {
   padding-bottom: 70px;
@@ -89,4 +107,23 @@ body {
 .circle__overlay--blue,
 .circle__inner--blue {
   border: 1px solid #00a3e4;
+}
+.circle__overlay-text {
+  position: absolute;
+  top: 0;
+  display: none;
+}
+.circle__overlay-text--headline {
+  font-size: 18px;
+  position: relative;
+}
+.circle__overlay-text--headline:after {
+  content: "";
+  position: absolute;
+  height: 3px;
+  width: 50%;
+  background-color: #ddd;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -6px;
 }
