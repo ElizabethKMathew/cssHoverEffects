@@ -1,92 +1,137 @@
-html,
-body {
-  margin: 0;
-  padding: 0;
+html, body {
+    margin: 0;
+    padding: 0;
 }
 body {
-  box-sizing: border-box;
-  font: 14px Arial;
+    box-sizing: border-box;
+    font: 14px Arial;
 }
 .hovereffects-header {
-  background-color: #000;
-  color: #fff;
-  font-size: 18px;
-  font-weight: 700;
-  height: 120px;
-  padding-top: 30px;
-  text-align: center;
+    background-color: #000;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 700;
+    height: 120px;
+    padding-top: 30px;
+    text-align: center;
 }
 .major-highlights {
-  margin-top: 70px;
+    margin-top: 70px;
 }
 .circle {
-  display: inline-block;
-  width: 33%;
+    display: inline-block;
+    width: 33%;
 }
 .circle__wrapper {
-  height: 250px;
-  margin: 0 auto;
-  position: relative;
-  width: 250px;
+    height: 250px;
+    margin: 0 auto;
+    position: relative;
+    width: 250px;
+}
+.circle__wrapper {
+    -webkit-transition: all 1s linear;
+    -moz-transition: all 1s linear;
+    -o-transition: all 1s linear;
+    transition: all 1s linear;
 }
 .circle__inner {
-  border-radius: 50%;
-  cursor: pointer;
-  height: 100%;
-  width: 100%;
-  -webkit-filter: blur(15px);
-  -moz-filter: blur(15px);
-  -o-filter: blur(15px);
-  -ms-filter: blur(15px);
-  filter: blur(15px);
+    border-radius: 50%;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: absolute;
+    -webkit-filter: blur(15px);
+    -moz-filter: blur(15px);
+    -o-filter: blur(15px);
+    -ms-filter: blur(15px);
+    filter: blur(15px);
 }
+.circle__wrapper:hover .circle__overlay-text,
 .circle__wrapper:hover .circle__overlay {
-  display: block;
+    display: block;
 }
-.circle__wrapper:hover .circle__inner {
-  display: none;
+.circle__wrapper:hover .circle__inner,
+.circle__wrapper:hover .circle__text {
+    visibility: hidden;
 }
 .circle__inner--green {
-  background-color: #5ba446;
+    background-color: #5ba446;
 }
 .circle__inner--orange {
-  background-color: #ef7b0a;
+    background-color: #ef7b0a;
 }
 .circle__inner--blue {
-  background-color: #00a3e4;
+    background-color: #00a3e4;
+}
+.text--green {
+    color: #5ba446;
+}
+.text--orange {
+    color: #ef7b0a;
+}
+.text--blue {
+    color: #00a3e4;
 }
 .circle__overlay {
   border-radius: 50%;
   display: none;
   height: 400px;
-  left: -28%;
+  left: -75px;
   position: absolute;
-  top: -30%;
+  top: -75px;
   width: 400px;
   z-index: 20;
 }
 .circle__text {
-  color: #fff;
-  font-size: 18px;
-  left: 40%;
-  position: absolute;
-  top: 40%;
+    color: #fff;
+    font-size: 18px;
+    position: relative;
+    z-index: 2;
+    line-height: 250px;
 }
 .text--headline {
-  padding-bottom: 70px;
+    padding-bottom: 70px;
 }
 .text--center {
-  text-align: center;
+    text-align: center;
 }
-.circle__overlay--green,
-.circle__inner--green {
-  border: 1px solid #5ba446;
+.circle__overlay--green, .circle__inner--green {
+    border: 1px solid #5ba446;
 }
-.circle__overlay--orange,
-.circle__inner--orange {
-  border: 1px solid #ef7b0a;
+.circle__overlay--orange, .circle__inner--orange {
+    border: 1px solid #ef7b0a;
 }
-.circle__overlay--blue,
-.circle__inner--blue {
-  border: 1px solid #00a3e4;
+.circle__overlay--blue, .circle__inner--blue {
+    border: 1px solid #00a3e4;
+}
+.circle__overlay-text {
+    position: absolute;
+    top: 0;
+    display: none;
+}
+.circle__overlay-text--headline {
+    font-size: 18px;
+    position: relative;
+}
+.circle__overlay-text--headline:after {
+    content: "";
+    position: absolute;
+    width: 50%;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#0f5583), to(#0f5583)), -webkit-gradient(linear, left top, left bottom, from(#D2D2D2), to(#D2D2D2));
+    background-image: -webkit-linear-gradient(#0f5583, #0f5583), -webkit-linear-gradient(#c3c3c3, #c3c3c3);
+    background-image: -o-linear-gradient(#0f5583, #0f5583), -o-linear-gradient(#c3c3c3, #c3c3c3);
+    background-image: linear-gradient(#0f5583, #0f5583), linear-gradient(#c3c3c3, #c3c3c3);
+    -webkit-background-size: 100% 3px, 100% 1px;
+    background-size: 100% 3px, 100% 1px;
+    background-repeat: no-repeat;
+    background-position: center bottom, center -webkit-calc(100% - 1px);
+    background-position: center bottom, center calc(100% - 1px);
+    -webkit-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -6px;
 }
